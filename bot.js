@@ -252,6 +252,38 @@ client.on('message', message => {
 
 	 
 	 
+client.on("message", message => {
+ if (message.content === "+help-games") {
+        message.react("✅")
+           message.react("📬")
+  const embed = new Discord.RichEmbed() 
+      .setColor("#ffff00")
+      .setDescription(`
+══════════ஜ۩۞۩ஜ════════════  
+
+    
+     1play
+     امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
+     1skip
+     تغير الأغنية
+     1pause
+     ايقاف الأغنية
+     1resume
+     مواصلة الأغنية
+     1vol
+   لتغيير درجه الصوت 1-100
+     1stop
+     خروج البوت من الروم
+
+
+══════════ஜ۩۞۩ஜ════════════ 
+ `)
+
+   message.author.sendEmbed(embed)
+   
+   }
+   }); 
+
 
 
 client.login(process.env.BOT_TOKEN);
