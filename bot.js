@@ -253,14 +253,13 @@ client.on('message', message => {
 	 
 	 
 client.on("message", message => {
- if (message.content === "+help-games") {
+ if (message.content === "1help") {
         message.react("✅")
            message.react("📬")
   const embed = new Discord.RichEmbed() 
       .setColor("#ffff00")
       .setDescription(`
 ══════════ஜ۩۞۩ஜ════════════  
-
     
      1play
      امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
