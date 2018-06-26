@@ -206,6 +206,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل: **${song.title}**`);
 }
 
+
 client.on('message', message => {
     var prefix = "1";
     
@@ -215,7 +216,18 @@ client.on('message', message => {
       if (message.author.id == 406862187634622477) return;
     
     
-
+    if (message.content.startsWith(prefix + 'playing')) {
+    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    client.user.setGame(argresult);
+        message.channel.sendMessage(`**${argresult}** : تم تغيير الحالة`)
+    } else
+    
+     
+    if (message.content.startsWith(prefix + 'streem')) {
+    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    client.user.setGame(argresult, "http://twitch.tv/HP");
+        message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
+    } else
     
     if (message.content.startsWith(prefix + 'setname')) {
     if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
@@ -229,7 +241,13 @@ client.on('message', message => {
     client.user.setAvatar(argresult);
         message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
     } else
-   
+    
+    
+    if (message.content.startsWith(prefix + 'watching')) {
+    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+        client.user.setActivity(argresult, {type : 'watching'});
+     message.channel.sendMessage(`**${argresult}** : تم تغيير الووتشينق الى`)
+    }
     
      });
 
@@ -256,7 +274,8 @@ client.on("message", message => {
    لتغيير درجه الصوت 1-100
      1stop
      خروج البوت من الروم
-
+     1bc
+     لنشر بردكاست
 
 ══════════ஜ۩۞۩ஜ════════════ 
  `)
@@ -266,6 +285,28 @@ client.on("message", message => {
    }
    }); 
 
+client.on('message', message => {
+   let embed = new Discord.RichEmbed()
+
+    let args = message.content.split(' ').slice(1).join(' ');
+     if(!message.channel.guild) return;
+if(message.content.split(' ')[0] == '1bc') {
+         message.react("✔️")
+          let embed = new Discord.RichEmbed()
+    .setColor("#FF00FF")
+    .setThumbnail(message.author.avatarURL)   
+                                      .addField('تم الارسال بواسطة :', "<@" + message.author.id + ">")
+                 message.channel.sendEmbed(embed);
+        message.guild.members.forEach(m => {
+            var bc = new Discord.RichEmbed()
+.addField('**● Sender  :**', `*** → ${message.author.username}#${message.author.discriminator}***`)
+            .addField('***● Server  :***', `*** → ${message.guild.name}***`)               
+    .setColor('#ff0000')
+                 .addField('ّ', args)
+            m.send(``,{embed: bc});
+        });
+    }
+})
 
 
 client.login(process.env.BOT_TOKEN);
