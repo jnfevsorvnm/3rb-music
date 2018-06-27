@@ -254,12 +254,12 @@ client.on('message', message => {
 
 client.on('message', message => {
      if (message.author.bot) return;
-       if (message.content ===  "+invite") {
+       if (message.content ===  "1invite") {
  message.channel.send('تم ارسال رابط دعوة البوت في الخاص')
 
-message.author.sendMessage(https://discordapp.com/api/oauth2/authorize?client_id=461496272344317962&permissions=53967942&scope=bot : 
+message.author.sendMessage(`https://discordapp.com/api/oauth2/authorize?client_id=461496272344317962&permissions=53967942&scope=bot` : 
 
-https://discord.gg/rrDZc32 :);
+`https://discord.gg/rrDZc32` :);
        }
 
 });
@@ -289,6 +289,8 @@ client.on("message", message => {
      خروج البوت من الروم
      1bc
      لنشر بردكاست
+     1invite
+     لاضافة البوت الى سيرفرك
 
 ══════════ஜ۩۞۩ஜ════════════ 
  `)
