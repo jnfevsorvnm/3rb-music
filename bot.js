@@ -206,24 +206,9 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل: **${song.title}**`);
 }
 
- client.on('message' , message => {
-
-    if (message.content.startsWith(prefix + "inv")) {  
-        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
-     const embed = new Discord.RichEmbed()
- .setColor("RANDOM")
- .setThumbnail(client.user.avatarURL)     
- .setDescription("Add me" + `
- **
-رابط البوت | https://discordapp.com/api/oauth2/authorize?client_id=461496272344317962&permissions=53967942&scope=bot
- **
-`);
-  message.author.sendEmbed(embed);
-   }
-});
 
 client.on('message', message => {
-    var prefix = "!";
+    var prefix = "1";
     
       if (!message.content.startsWith(prefix)) return;
       var args = message.content.split(' ').slice(1);
