@@ -253,19 +253,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-                if(message.content === '1' + "inv") {
-                    let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right:Click here to Invite lg-Bot!**")
-                     .setThumbnail(message.author.avatarURL)
-      .setFooter(message.author.username, message.author.avatarURL) 
-                    .setDescription(`thanks for adding me to your server **${message.author.username}**`)
-                    
-                .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975`);
-                
-                   message.channel.sendEmbed(embed);
-                  }
-});
+
 	 
 	 
 client.on("message", message => {
@@ -326,7 +314,19 @@ if(message.content.split(' ')[0] == '1bc') {
 })
 
 
-
+client.on('message', message => {
+                if(message.content === '1' + "inv") {
+                    let embed = new Discord.RichEmbed ()
+                    embed.setTitle("**:arrow_right:Click here to Invite lg-Bot!**")
+                     .setThumbnail(message.author.avatarURL)
+      .setFooter(message.author.username, message.author.avatarURL) 
+                    .setDescription(`thanks for adding me to your server **${message.author.username}**`)
+                    
+                .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2080374975`);
+                
+                   message.channel.sendEmbed(embed);
+                  }
+});
 
 
 
