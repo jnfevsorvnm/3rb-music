@@ -230,14 +230,14 @@ client.on('message', message => {
     } else
     
     if (message.content.startsWith(prefix + 'setname')) {
-    if (message.author.id !== '298421806778548224') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
       client.user.setUsername(argresult).then
           message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
       return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
     } else
         
     if (message.content.startsWith(prefix + 'setavatar')) {
-    if (message.author.id !== '298421806778548224') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
     client.user.setAvatar(argresult);
         message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
     } else
@@ -250,6 +250,19 @@ client.on('message', message => {
     }
     
      });
+
+
+client.on('message', message => {
+     if (message.author.bot) return;
+       if (message.content ===  "+invite") {
+ message.channel.send('تم ارسال رابط دعوة البوت في الخاص')
+
+message.author.sendMessage(https://discordapp.com/api/oauth2/authorize?client_id=461496272344317962&permissions=53967942&scope=bot : 
+
+https://discord.gg/rrDZc32 :);
+       }
+
+});
 
 	 
 	 
