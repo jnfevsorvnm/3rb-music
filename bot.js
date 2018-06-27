@@ -322,7 +322,7 @@ client.on('message', message => {
 
     let args = message.content.split(' ').slice(1).join(' ');
      if(!message.channel.guild) return;
-if(message.content.split(' ')[0] == '=bc') {
+if(message.content.split(' ')[0] == '1bc') {
          message.react("✔️")
           let embed = new Discord.RichEmbed()
     .setColor("#FF00FF")
@@ -342,7 +342,7 @@ if(message.content.split(' ')[0] == '=bc') {
 
 
 client.on('message', message => {
-                if(message.content === '*' + "inv") {
+                if(message.content === '1' + "inv") {
                     let embed = new Discord.RichEmbed ()
                     embed.setTitle("**:arrow_right:Click here to Invite lg-Bot!**")
                      .setThumbnail(message.author.avatarURL)
