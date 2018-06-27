@@ -252,16 +252,20 @@ client.on('message', message => {
      });
 
 
-client.on('message', message => {
-     if (message.author.bot) return;
-       if (message.content ===  "1invite") {
- message.channel.send('تم ارسال رابط دعوة البوت في الخاص')
+ client.on('message' , message => {
 
-message.author.sendMessage(`https://discordapp.com/api/oauth2/authorize?client_id=461496272344317962&permissions=53967942&scope=bot` : 
-
-`https://discord.gg/rrDZc32` :);
-       }
-
+    if (message.content.startsWith(prefix + "inv")) {  
+        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
+     const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ .setThumbnail(client.user.avatarURL)     
+ .setDescription("Add me" + `
+ **
+رابط البوت | https://discordapp.com/api/oauth2/authorize?client_id=461496272344317962&permissions=53967942&scope=bot
+ **
+`);
+  message.author.sendEmbed(embed);
+   }
 });
 
 	 
