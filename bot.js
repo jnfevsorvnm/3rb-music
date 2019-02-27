@@ -208,7 +208,7 @@ function play(guild, song) {
 
 
 client.on('message', message => {
-    var prefix = "1";
+    var prefix = "-";
     
       if (!message.content.startsWith(prefix)) return;
       var args = message.content.split(' ').slice(1);
@@ -217,34 +217,34 @@ client.on('message', message => {
     
     
     if (message.content.startsWith(prefix + 'playing')) {
-    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '396958215377780747') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
     client.user.setGame(argresult);
         message.channel.sendMessage(`**${argresult}** : تم تغيير الحالة`)
     } else
     
      
     if (message.content.startsWith(prefix + 'streem')) {
-    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '396958215377780747') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
     client.user.setGame(argresult, "http://twitch.tv/HP");
         message.channel.sendMessage(`**${argresult}** :تم تغيير الحالة الى ستريمنج`)
     } else
     
     if (message.content.startsWith(prefix + 'setname')) {
-    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '396958215377780747') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
       client.user.setUsername(argresult).then
           message.channel.sendMessage(`**${argresult}** : تم تغير الأسم`)
       return message.reply("**لا تستطيع تغير الأسم الا بعد ساعتين**");
     } else
         
     if (message.content.startsWith(prefix + 'setavatar')) {
-    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '396958215377780747') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
     client.user.setAvatar(argresult);
         message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
     } else
     
     
     if (message.content.startsWith(prefix + 'watching')) {
-    if (message.author.id !== '406862187634622477') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
+    if (message.author.id !== '396958215377780747') return message.reply('** هذا الأمر فقط لصاحب البوت و شكراًً **')
         client.user.setActivity(argresult, {type : 'watching'});
      message.channel.sendMessage(`**${argresult}** : تم تغيير الووتشينق الى`)
     }
@@ -257,7 +257,7 @@ client.on('message', message => {
 	 
 	 
 client.on("message", message => {
- if (message.content === "1help") {
+ if (message.content === "-help") {
         message.react("✅")
            message.react("📬")
   const embed = new Discord.RichEmbed() 
@@ -265,21 +265,21 @@ client.on("message", message => {
       .setDescription(`
 ══════════ஜ۩۞۩ஜ════════════  
     
-     1play
+     -play
      امر تشغيل الأغنية , !شغل الرابط او اسم الأعنية
-     1skip
+     -skip
      تغير الأغنية
-     1pause
+    -pause
      ايقاف الأغنية
-     1resume
+     -resume
      مواصلة الأغنية
-     1vol
+     -vol
    لتغيير درجه الصوت 1-100
-     1stop
+     -stop
      خروج البوت من الروم
-     1bc
+     -bc
      لنشر بردكاست
-     1invite
+     -invite
      لاضافة البوت الى سيرفرك
 
 ══════════ஜ۩۞۩ஜ════════════ 
@@ -295,7 +295,7 @@ client.on('message', message => {
 
     let args = message.content.split(' ').slice(1).join(' ');
      if(!message.channel.guild) return;
-if(message.content.split(' ')[0] == '1bc') {
+if(message.content.split(' ')[0] == '-bc') {
          message.react("✔️")
           let embed = new Discord.RichEmbed()
     .setColor("#FF00FF")
@@ -315,7 +315,7 @@ if(message.content.split(' ')[0] == '1bc') {
 
 
 client.on('message', message => {
-                if(message.content === '1' + "inv") {
+                if(message.content === '-' + "inv") {
                     let embed = new Discord.RichEmbed ()
                     embed.setTitle("**:arrow_right:Click here to Invite lg-Bot!**")
                      .setThumbnail(message.author.avatarURL)
